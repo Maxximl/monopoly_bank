@@ -7,7 +7,7 @@ import styles from "./App.module.scss";
 
 export const App = () => {
     return (
-        <HashRouter basename="/">
+        <HashRouter basename={process.env.PUBLIC_URL}>
             <div className={styles.container}>
                 <Route path="/" exact component={Join} />
                 <Route path="/room" component={Room} />
