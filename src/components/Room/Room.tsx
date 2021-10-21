@@ -6,7 +6,7 @@ import {IRoom, IRoomData} from "./Room.types";
 import {Users} from "../Users/Users";
 import {CurrentUser} from "../CurrentUser/CurrentUser";
 import {IUser} from "../UserCard/UserCard.types";
-import {BANK_ID, ENDPOINT} from "../../utils/constants";
+import {BANK_CARD, BANK_ID, ENDPOINT} from "../../utils/constants";
 import {Modal} from "../Modal/Modal";
 
 let socket: Socket;
@@ -73,7 +73,7 @@ export const Room: React.FC<IRoom> = ({}) => {
             return user.id === id;
         });
         if (id === BANK_ID) {
-            setToUser({id: BANK_ID, name: "банк", room: "", money: null});
+            setToUser(BANK_CARD);
         } else {
             setToUser(toUser);
         }
