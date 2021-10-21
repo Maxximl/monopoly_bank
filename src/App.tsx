@@ -1,5 +1,5 @@
 import React from "react";
-import {HashRouter, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Join} from "./components/Join/Join";
 import {Room} from "./components/Room/Room";
 import "normalize.css";
@@ -7,11 +7,11 @@ import styles from "./App.module.scss";
 
 export const App = () => {
     return (
-        <HashRouter basename="/">
+        <Router>
             <div className={styles.container}>
-                <Route path="/" exact component={Join} />
-                <Route path="/room" component={Room} />
+                <Route path="/monopoly_bank" exact component={Join} />
+                <Route path="monopoly_bank/room" component={Room} />
             </div>
-        </HashRouter>
+        </Router>
     );
 };
