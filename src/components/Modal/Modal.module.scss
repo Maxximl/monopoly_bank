@@ -1,0 +1,56 @@
+.modalWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    z-index: 500;
+    display: flex;
+
+    .modalContainer {
+        width: 80%;
+        padding: 20px;
+        margin: auto;
+        background-color: white;
+        position: relative;
+
+        .closeContainer {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            svg {
+                font-size: 35px;   
+                color: grey;
+                transition: color 0.5s ease;
+            }
+
+            &:hover svg {
+              
+               color:rgb(184, 45, 45)
+            }
+
+        }
+        .controls {
+            width: 100%;
+            margin: 0 auto;
+      
+
+            .inputField div {
+                width: 100%;
+                display: block;
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+
+            button {
+                display: block;
+                font-size: 20px;
+                margin: 0 auto
+            }
+        }
+    }
+}
+
+

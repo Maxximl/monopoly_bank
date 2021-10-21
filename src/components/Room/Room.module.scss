@@ -1,0 +1,19 @@
+
+.outerContainer {
+    margin: auto;
+    height: 90vh;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    position: relative;
+}
+
+.roomContainer {
+    height: 100%;
+    position: relative;
+}
+@media screen and (max-width: 600px) {
+    .outerContainer {
+        min-height: -webkit-fill-available;
+    }
+  }

@@ -1,0 +1,25 @@
+.outerContainer {
+    width: 80%;
+    height: 100px;
+    background-color: royalblue;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    flex: 1;
+    margin: 10px;
+}
+
+.money {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+}
+
+.name {
+    font-size: 25px;
+}
