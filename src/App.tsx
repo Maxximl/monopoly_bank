@@ -7,7 +7,7 @@ import styles from "./App.module.scss";
 
 export const App = () => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="/">
             <div className={styles.container}>
                 <Route path="/" exact component={Join} />
                 <Route path="/room" component={Room} />
