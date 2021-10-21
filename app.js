@@ -54459,7 +54459,7 @@ var App = function () {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _App_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/monopoly_bank", exact: true, component: _components_Join_Join__WEBPACK_IMPORTED_MODULE_1__.Join }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "monopoly_bank/room", component: _components_Room_Room__WEBPACK_IMPORTED_MODULE_2__.Room }))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/monopoly_bank/room", component: _components_Room_Room__WEBPACK_IMPORTED_MODULE_2__.Room }))));
 };
 
 
@@ -54797,7 +54797,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ENDPOINT": () => (/* binding */ ENDPOINT),
 /* harmony export */   "BANK_ID": () => (/* binding */ BANK_ID)
 /* harmony export */ });
-var ENDPOINT = "http://192.168.1.65:5000";
+var ENDPOINT = "https://git.heroku.com/glacial-ravine-76976.git";
 var BANK_ID = "bankId";
 
 
