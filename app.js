@@ -54456,7 +54456,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, { basename: process.env.PUBLIC_URL },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, { basename: process.env.PUBLIC_URL },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _App_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/", exact: true, component: _components_Join_Join__WEBPACK_IMPORTED_MODULE_1__.Join }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/room", component: _components_Room_Room__WEBPACK_IMPORTED_MODULE_2__.Room }))));
