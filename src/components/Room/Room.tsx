@@ -12,7 +12,7 @@ import {Modal} from "../Modal/Modal";
 let socket: Socket;
 
 export const Room: React.FC<IRoom> = ({}) => {
-    const [name, setName] = useState("");
+    const [userName, setName] = useState("");
     const [room, setRoom] = useState("");
     const [users, setUsers] = useState<IUser[]>([]);
     const [currentUser, setCurrentUser] = useState<IUser>(null);
@@ -21,19 +21,18 @@ export const Room: React.FC<IRoom> = ({}) => {
     const [toUser, setToUser] = useState<IUser>(null);
 
     useEffect(() => {
-        const {name, room} = queryString.parse(location.search);
-
-        setName(name as string);
-        setRoom(room as string);
-    }, [ENDPOINT, location.search]);
+        const query = queryString.parse(location.hash);
+        setName(query["/room?name"] as string);
+        setRoom(query.room as string);
+    }, [ENDPOINT, location.hash]);
 
     useEffect(() => {
-        if (name) {
+        if (userName) {
             socket = io(ENDPOINT, {
                 transports: ["websocket", "polling", "flashsocket"],
             });
 
-            socket.emit("join", {name, room}, () => {});
+            socket.emit("join", {name: userName, room}, () => {});
 
             return () => {
                 socket.emit("disconnect");
@@ -41,29 +40,29 @@ export const Room: React.FC<IRoom> = ({}) => {
                 socket.off();
             };
         }
-    }, [name]);
+    }, [userName]);
 
     useEffect(() => {
-        if (name) {
+        if (userName) {
             socket.on("message", (message) => {
                 setMessages([...messages, message]);
             });
 
             socket.on("roomData", ({users}: IRoomData) => {
                 const currentUser = users.find((user) => {
-                    console.log("USER_NAME", user.name, "name ", name);
-                    return user.name === name;
+                    console.log("USER_NAME", user.name, "name ", userName);
+                    return user.name === userName;
                 });
                 setCurrentUser(currentUser);
                 setUsers(users);
             });
         }
-    }, [name]);
+    }, [userName]);
 
     const updateUser = (money: number) => {
         socket.emit(
             "updateUser",
-            {room, money, fromUserId: name, toUserId: toUser.id},
+            {room, money, fromUserId: userName, toUserId: toUser.id},
             () => {},
         );
     };
@@ -93,7 +92,7 @@ export const Room: React.FC<IRoom> = ({}) => {
             <div className={styles.roomContainer}>
                 <Users
                     users={users}
-                    currentUserName={name}
+                    currentUserName={userName}
                     onClick={handleClickUser}
                 />
                 <CurrentUser user={currentUser} onClick={handleClickUser} />
