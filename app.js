@@ -54797,7 +54797,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ENDPOINT": () => (/* binding */ ENDPOINT),
 /* harmony export */   "BANK_ID": () => (/* binding */ BANK_ID)
 /* harmony export */ });
-var ENDPOINT = "http://glacial-ravine-76976.herokuapp.com/";
+var ENDPOINT = "https://glacial-ravine-76976.herokuapp.com/";
 var BANK_ID = "bankId";
 
 
