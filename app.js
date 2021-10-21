@@ -54667,7 +54667,7 @@ var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from
 
 var socket;
 var Room = function (_a) {
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""), name = _b[0], setName = _b[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""), userName = _b[0], setName = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""), room = _c[0], setRoom = _c[1];
     var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), users = _d[0], setUsers = _d[1];
     var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null), currentUser = _e[0], setCurrentUser = _e[1];
@@ -54675,40 +54675,40 @@ var Room = function (_a) {
     var _g = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), modalVisible = _g[0], setModalVisible = _g[1];
     var _h = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null), toUser = _h[0], setToUser = _h[1];
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        var _a = query_string__WEBPACK_IMPORTED_MODULE_1__.parse(location.search), name = _a.name, room = _a.room;
-        setName(name);
-        setRoom(room);
-    }, [_utils_constants__WEBPACK_IMPORTED_MODULE_6__.ENDPOINT, location.search]);
+        var query = query_string__WEBPACK_IMPORTED_MODULE_1__.parse(location.hash);
+        setName(query["/room?name"]);
+        setRoom(query.room);
+    }, [_utils_constants__WEBPACK_IMPORTED_MODULE_6__.ENDPOINT, location.hash]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (name) {
+        if (userName) {
             socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_2__.io)(_utils_constants__WEBPACK_IMPORTED_MODULE_6__.ENDPOINT, {
                 transports: ["websocket", "polling", "flashsocket"],
             });
-            socket.emit("join", { name: name, room: room }, function () { });
+            socket.emit("join", { name: userName, room: room }, function () { });
             return function () {
                 socket.emit("disconnect");
                 socket.off();
             };
         }
-    }, [name]);
+    }, [userName]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (name) {
+        if (userName) {
             socket.on("message", function (message) {
                 setMessages(__spreadArray(__spreadArray([], messages, true), [message], false));
             });
             socket.on("roomData", function (_a) {
                 var users = _a.users;
                 var currentUser = users.find(function (user) {
-                    console.log("USER_NAME", user.name, "name ", name);
-                    return user.name === name;
+                    console.log("USER_NAME", user.name, "name ", userName);
+                    return user.name === userName;
                 });
                 setCurrentUser(currentUser);
                 setUsers(users);
             });
         }
-    }, [name]);
+    }, [userName]);
     var updateUser = function (money) {
-        socket.emit("updateUser", { room: room, money: money, fromUserId: name, toUserId: toUser.id }, function () { });
+        socket.emit("updateUser", { room: room, money: money, fromUserId: userName, toUserId: toUser.id }, function () { });
     };
     var handleClickUser = function (id) {
         var toUser = users.find(function (user) {
@@ -54725,7 +54725,7 @@ var Room = function (_a) {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Room_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].outerContainer },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Modal_Modal__WEBPACK_IMPORTED_MODULE_7__.Modal, { visible: modalVisible, onClickClose: function () { return setModalVisible(false); }, onSendMoney: updateUser, toUser: toUser, currentUserId: currentUser === null || currentUser === void 0 ? void 0 : currentUser.id }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Room_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].roomContainer },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Users_Users__WEBPACK_IMPORTED_MODULE_4__.Users, { users: users, currentUserName: name, onClick: handleClickUser }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Users_Users__WEBPACK_IMPORTED_MODULE_4__.Users, { users: users, currentUserName: userName, onClick: handleClickUser }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CurrentUser_CurrentUser__WEBPACK_IMPORTED_MODULE_5__.CurrentUser, { user: currentUser, onClick: handleClickUser }))));
 };
 
