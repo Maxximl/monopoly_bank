@@ -10,7 +10,7 @@ export const App = () => {
         <Router>
             <div className={styles.container}>
                 <Route path="/monopoly_bank" exact component={Join} />
-                <Route path="/monopoly_bank/room" component={Room} />
+                <Route path="/room" component={Room} />
             </div>
         </Router>
     );
