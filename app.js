@@ -54556,7 +54556,7 @@ var Join = function () {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"], { onChange: function (event) { return setRoom(event.target.value); }, placeholder: "\u041A\u043E\u043C\u043D\u0430\u0442\u0430" })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, { className: _Join_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].buttonLink, onClick: function (event) {
                     return !name || !room ? event.preventDefault() : null;
-                }, to: "/room?name=" + name + "&room=" + room },
+                }, to: "/monopoly_bank/room?name=" + name + "&room=" + room },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], { color: "primary", variant: "contained" }, "\u0412\u043E\u0439\u0442\u0438")))));
 };
 
