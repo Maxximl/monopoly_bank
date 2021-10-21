@@ -7,10 +7,10 @@ import styles from "./App.module.scss";
 
 export const App = () => {
     return (
-        <Router>
+        <Router basename="/monopoly_bank">
             <div className={styles.container}>
-                <Route path="/monopoly_bank" exact component={Join} />
-                <Route path="/monopoly_bank/room" component={Room} />
+                <Route path="/" exact component={Join} />
+                <Route path="/room" component={Room} />
             </div>
         </Router>
     );
