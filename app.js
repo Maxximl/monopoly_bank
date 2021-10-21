@@ -54457,10 +54457,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, null,
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, { basename: "/monopoly_bank" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _App_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/monopoly_bank", exact: true, component: _components_Join_Join__WEBPACK_IMPORTED_MODULE_1__.Join }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/monopoly_bank/room", component: _components_Room_Room__WEBPACK_IMPORTED_MODULE_2__.Room }))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/", exact: true, component: _components_Join_Join__WEBPACK_IMPORTED_MODULE_1__.Join }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/room", component: _components_Room_Room__WEBPACK_IMPORTED_MODULE_2__.Room }))));
 };
 
 
@@ -54560,7 +54560,7 @@ var Join = function () {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"], { onChange: function (event) { return setRoom(event.target.value); }, placeholder: "\u041A\u043E\u043C\u043D\u0430\u0442\u0430" })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, { className: _Join_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].buttonLink, onClick: function (event) {
                     return !name || !room ? event.preventDefault() : null;
-                }, to: "/monopoly_bank/room?name=" + name + "&room=" + room },
+                }, to: "/room?name=" + name + "&room=" + room },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], { color: "primary", variant: "contained" }, "\u0412\u043E\u0439\u0442\u0438")))));
 };
 
