@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         clean: true
     },
     resolve: {
@@ -16,7 +16,7 @@ module.exports = {
     },
     devtool: 'source-map',
     devServer: {
-        static: './dist',
+        static: './build',
         hot: true,
         historyApiFallback: true
     },
