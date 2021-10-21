@@ -13836,10 +13836,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".outerContainer__mb7IP {\n  flex: 1;\n  margin: 10px;\n  display: flex;\n  background-color: yellow;\n  border-radius: 20px;\n  cursor: pointer; }\n  .outerContainer__mb7IP .content__KHkIV {\n    margin: auto; }\n", "",{"version":3,"sources":["webpack://./src/components/BankCard/BankCard.module.scss"],"names":[],"mappings":"AAAA;EACI,OAAO;EACP,YAAY;EACZ,aAAa;EACb,wBAAwB;EACxB,mBAAmB;EACnB,eAAe,EAAA;EANnB;IAQQ,YAAY,EAAA","sourcesContent":[".outerContainer {\n    flex: 1;\n    margin: 10px;\n    display: flex;\n    background-color: yellow;\n    border-radius: 20px;\n    cursor: pointer;\n    .content {\n        margin: auto;\n        \n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".outerContainer__mb7IP {\n  flex: 1;\n  margin: 10px;\n  background-color: #7c7c1f;\n  border-radius: 20px;\n  cursor: pointer;\n  padding: 10px;\n  color: white; }\n  .outerContainer__mb7IP .name__Mb81d {\n    font-size: 25px; }\n  .outerContainer__mb7IP .content__KHkIV {\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    .outerContainer__mb7IP .content__KHkIV img {\n      width: 50px;\n      height: 50px; }\n", "",{"version":3,"sources":["webpack://./src/components/BankCard/BankCard.module.scss"],"names":[],"mappings":"AAAA;EACI,OAAO;EACP,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;EACnB,eAAe;EACf,aAAa;EACb,YAAY,EAAA;EAPhB;IAUQ,eAAe,EAAA;EAVvB;IAaQ,aAAa;IACd,uBAAuB;IACvB,mBAAmB,EAAA;IAf1B;MAkBW,WAAW;MACX,YAAY,EAAA","sourcesContent":[".outerContainer {\n    flex: 1;\n    margin: 10px;\n    background-color: #7c7c1f;\n    border-radius: 20px;\n    cursor: pointer;\n    padding: 10px;\n    color: white;\n\n    .name {\n        font-size: 25px;\n    }\n    .content {\n        display: flex;\n       justify-content: center;\n       align-items: center;   \n       \n       img {\n           width: 50px;\n           height: 50px;\n       }\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"outerContainer": "outerContainer__mb7IP",
+	"name": "name__Mb81d",
 	"content": "content__KHkIV"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -54478,12 +54479,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _BankCard_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BankCard.module.scss */ "./src/components/BankCard/BankCard.module.scss");
+/* harmony import */ var _images_bank_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./images/bank.svg */ "./src/components/BankCard/images/bank.svg");
+
 
 
 var BankCard = function (_a) {
-    var onClick = _a.onClick;
+    var onClick = _a.onClick, user = _a.user;
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _BankCard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].outerContainer, onClick: onClick },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _BankCard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].content }, "$$$")));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _BankCard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].name }, user.name),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _BankCard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].content },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_bank_svg__WEBPACK_IMPORTED_MODULE_2__, alt: "" }))));
 };
 
 
@@ -54512,13 +54517,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var CurrentUser = function (_a) {
     var user = _a.user, onClick = _a.onClick;
-    console.log(user);
     if (!user) {
         return null;
     }
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _CurrentUser_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].container },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_UserCard_UserCard__WEBPACK_IMPORTED_MODULE_1__.UserCard, { user: user, onClick: function () { return onClick(user.id); } }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_BankCard_BankCard__WEBPACK_IMPORTED_MODULE_3__.BankCard, { onClick: function () { return onClick(_utils_constants__WEBPACK_IMPORTED_MODULE_4__.BANK_ID); } })));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_BankCard_BankCard__WEBPACK_IMPORTED_MODULE_3__.BankCard, { onClick: function () { return onClick(_utils_constants__WEBPACK_IMPORTED_MODULE_4__.BANK_ID); }, user: _utils_constants__WEBPACK_IMPORTED_MODULE_4__.BANK_CARD })));
 };
 
 
@@ -54711,7 +54715,7 @@ var Room = function (_a) {
             return user.id === id;
         });
         if (id === _utils_constants__WEBPACK_IMPORTED_MODULE_6__.BANK_ID) {
-            setToUser({ id: _utils_constants__WEBPACK_IMPORTED_MODULE_6__.BANK_ID, name: "банк", room: "", money: null });
+            setToUser(_utils_constants__WEBPACK_IMPORTED_MODULE_6__.BANK_CARD);
         }
         else {
             setToUser(toUser);
@@ -54795,10 +54799,17 @@ var Users = function (_a) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ENDPOINT": () => (/* binding */ ENDPOINT),
-/* harmony export */   "BANK_ID": () => (/* binding */ BANK_ID)
+/* harmony export */   "BANK_ID": () => (/* binding */ BANK_ID),
+/* harmony export */   "BANK_CARD": () => (/* binding */ BANK_CARD)
 /* harmony export */ });
 var ENDPOINT = "https://glacial-ravine-76976.herokuapp.com/";
 var BANK_ID = "bankId";
+var BANK_CARD = {
+    id: BANK_ID,
+    name: "Банк",
+    room: "",
+    money: Infinity
+};
 
 
 /***/ }),
@@ -54930,6 +54941,17 @@ yeast.encode = encode;
 yeast.decode = decode;
 module.exports = yeast;
 
+
+/***/ }),
+
+/***/ "./src/components/BankCard/images/bank.svg":
+/*!*************************************************!*\
+  !*** ./src/components/BankCard/images/bank.svg ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "3a8be5f8bf7f0e220e08.svg";
 
 /***/ }),
 
@@ -58726,6 +58748,26 @@ function hasBinary(obj, toJSON) {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
