@@ -9,7 +9,7 @@ export const App = () => {
     return (
         <HashRouter>
             <div className={styles.container}>
-                <Route path="/monopoly_bank" exact component={Join} />
+                <Route path="/" exact component={Join} />
                 <Route path="/room" component={Room} />
             </div>
         </HashRouter>

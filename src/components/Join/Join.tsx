@@ -29,7 +29,7 @@ export const Join: React.FC<IJoin> = () => {
                     onClick={(event) =>
                         !name || !room ? event.preventDefault() : null
                     }
-                    to={`/monopoly_bank/room?name=${name}&room=${room}`}>
+                    to={`/room?name=${name}&room=${room}`}>
                     <Button color="primary" variant="contained">
                         Войти
                     </Button>
